@@ -2,7 +2,8 @@
 
 {% block content %}
 <center>
-    <h1>500 Internal Server Error</h1>
-    <p>Something Went Wrong! Try Again...</p>
+    <h1>{% block title %} 500 Internal Server Error {% endblock %}</h1>
+    <p>OOOOPS! Something went wrong on the server.</p>
+    <p>Sammy is currently working on this issue. Please try again later.</p>
 </center>
-{% end block %}
+{% endblock %}

@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<h1>Profile Page!!</h1>
+<h1>{% block title %} Profile {% endblock %}</h1>
+<hr/>
 <p>{{ user }}</p>
 
 {% endblock %}
