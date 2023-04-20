@@ -13,14 +13,13 @@
     {{ form.email.label(class="form-label") }} 
     {{ form.email(class="form-control") }}
     <br/>
+    {{ form.password.label(class="form-label") }} 
+    {{ form.password(class="form-control") }}
+    <br/>
+    {{ form.password2.label(class="form-label") }} 
+    {{ form.password2(class="form-control") }}
+    <br/>
     {{ form.submit(class="btn btn-primary mb-3") }}
 </form>
-
-{% if our_users %}
-    <hr/>
-    {% for our_user in our_users %}
-        <p>{{ our_user.id }} - {{ our_user.name }} {{ our_user.email }}</p>
-    {% endfor %}
-{% endif %}
 
 {% endblock %}

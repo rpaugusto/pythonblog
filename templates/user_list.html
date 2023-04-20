@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} List User {% endblock %}</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{{ url_for('user_add')}}" class="btn btn-primary me-md-2" type="button">
+        <span class="bi bi-plus-circle"></span>
+        User Add
+    </a>
+</div>
+
+<hr/>
+
+{% if our_users %}
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>eMail</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in our_users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <a href="{{ url_for('user_update' , id=user.id) }}" class="btn mb3 bi bi-pencil-square"></a>
+                <a href="#" class="btn mb3 bi bi-trash"></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>  
+{% endif %}
+
+{% endblock %}

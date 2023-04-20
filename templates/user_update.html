@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} Update User {% endblock %}</h1>
+<hr/>
+
+<form action="/user_update/{{ update.id }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label(class="form-label") }} 
+    {{ form.name(class="form-control", value=update.name) }}
+    <br/>
+    {{ form.email.label(class="form-label") }} 
+    {{ form.email(class="form-control", value=update.email) }}
+    <br/>
+    {{ form.submit(class="btn btn-primary mb-3") }}
+</form>
+
+<hr/>
+{{ update }}
+
+{% endblock %}
